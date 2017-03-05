@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eurekaconfig
+
+server:
+  port: 8761
+---
+spring:
+  profiles: local
+server:
+  hostname: localhost
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaconfig:s3cr3tpassword@localhost:8761/eureka/
+---
+spring:
+  profiles: development
+server:
+  hostname: localeureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaconfig:s3cr3tpassword@localeureka:8761/eureka/

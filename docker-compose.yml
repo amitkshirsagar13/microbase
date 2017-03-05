@@ -1,0 +1,28 @@
+version: '2.1'
+services:
+  mongo:
+    image: mongo:latest
+    hostname: localmongo
+    ports:
+      - 27072:27017
+  activemq:
+    image: webcenter/activemq:latest
+    hostname: localmq
+    ports:
+      - 62626:61616
+    depends_on:
+      mongo:
+        condition: service_started
+  eureka:
+    image: org.base/microbase:latest
+    restart: on-failure:7
+    hostname: localeureka
+    ports:
+      - 8761:8761
+    environment:
+      - spring.profiles.active=development
+    depends_on:
+      activemq:
+        condition: service_started
+    volumes:
+      - /shared/eureka:/tmp

@@ -1,0 +1,61 @@
+spring.profiles.active: local
+
+server:
+  port: 8761
+
+security:
+  basic:
+    enabled: true
+  user:
+      name: eurekaconfig
+      password: s3cr3tpassword
+      role: USER
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+
+applications: WEBHOOK,TRANSFORM,ZUUL
+turbine:
+  clusterNameExpression: new String("MicroBase")
+  appConfig: ${applications}
+
+
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        prefix: /config
+        git:
+          uri: file:///opt/github/MicroDocker/spring-config
+---
+spring:
+  profiles: local
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///opt/github/MicroDocker/spring-config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaconfig:s3cr3tpassword@localhost:8761/eureka/
+
+---
+spring:
+  profiles: development
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          uri: https://github.com/amitkshirsagar13/spring-config.git
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaconfig:s3cr3tpassword@localeureka:8761/eureka/
