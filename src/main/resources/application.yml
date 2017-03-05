@@ -7,9 +7,9 @@ security:
   basic:
     enabled: true
   user:
-      name: eurekaconfig
-      password: s3cr3tpassword
-      role: USER
+    name: eurekaconfig
+    password: s3cr3tpassword
+    role: ACTUATOR
 
 eureka:
   client:
@@ -24,6 +24,8 @@ turbine:
 
 
 spring:
+  user:
+    roles: ACTUATOR
   cloud:
     config:
       discovery:
