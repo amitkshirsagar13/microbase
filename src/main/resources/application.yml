@@ -9,7 +9,11 @@ security:
   user:
     name: eurekaconfig
     password: s3cr3tpassword
-    role: ACTUATOR
+
+#management:
+#  security:
+#    enabled: false
+
 
 eureka:
   client:

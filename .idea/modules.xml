@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microbase.iml" filepath="$PROJECT_DIR$/.idea/modules/microbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microbase_main.iml" filepath="$PROJECT_DIR$/.idea/modules/microbase_main.iml" group="microbase" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microbase_test.iml" filepath="$PROJECT_DIR$/.idea/modules/microbase_test.iml" group="microbase" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service.iml" filepath="$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service.iml" group="zuul-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service_main.iml" group="zuul-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/zuul-service/zuul-service_test.iml" group="zuul-service" />
     </modules>
   </component>
 </project>

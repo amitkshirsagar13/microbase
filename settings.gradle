@@ -1,1 +1,3 @@
 rootProject.name='microbase'
+
+include 'zuul-service'

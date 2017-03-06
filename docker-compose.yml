@@ -25,4 +25,21 @@ services:
       activemq:
         condition: service_started
     volumes:
-      - /shared/eureka:/tmp
+      - /tmp:/shared/eureka
+  zuul:
+    image: org.base/zuul-service:latest
+    restart: on-failure:7
+    hostname: localzuul
+    ports:
+      - 9999:9999
+    extra_hosts:
+      - "localeureka:192.168.99.100"
+    links:
+      - eureka
+    environment:
+      - spring.profiles.active=development
+    depends_on:
+      eureka:
+        condition: service_started
+    volumes:
+      - /tmp:/shared/zuul

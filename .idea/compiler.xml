@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="microbase_main" target="1.8" />
       <module name="microbase_test" target="1.8" />
+      <module name="zuul-service_main" target="1.8" />
+      <module name="zuul-service_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
